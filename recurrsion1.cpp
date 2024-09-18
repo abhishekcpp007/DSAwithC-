@@ -22,7 +22,7 @@ using namespace std;
 int f(int p, int q){
     if(q==0) return 1;
     return p * f(p,q-1);
-}*/
+}
 // more optimize way in o(logq)
 
 
@@ -45,4 +45,43 @@ int main(){
     int res = f(p,q);
     cout<<res;
     return 0;
+} 
+
+****print using recurrsion in array *******
+
+
+void f(int *arr , int idx, int n){
+    if(idx == n)
+    return ;
+    
+    // self work
+    cout<<arr[idx];
+
+    // assumption 
+    f(arr , idx+1,n);
 }
+
+int main(){
+    int arr[] = {1,2,3,4,5};
+    int n = 5;
+    f(arr , 0,n);
+    return 0;
+}
+
+*/
+
+int sumUsingRecurrsion(int *arr , int idx, int n){
+    if(idx == n)
+    return 0;
+    return arr[idx] + sumUsingRecurrsion(arr , idx+1,n);
+}
+int main(){
+    int arr[] = {1,2,3,4,5};
+    int n = 5;
+    int res = sumUsingRecurrsion(arr , 0,n);
+    cout<<res;
+    return 0;
+}
+
+
+
