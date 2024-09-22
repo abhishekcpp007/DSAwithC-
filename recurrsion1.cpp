@@ -91,11 +91,9 @@ using namespace std; */
 
 
 
-#include <iostream>
-using namespace std;
 
 // Function to calculate the sum of the first n natural numbers
-int sumFirstN(int n) {
+/*int sumFirstN(int n) {
     return n * (n + 1) / 2;
 }
 
@@ -140,5 +138,39 @@ int mthSummation(int n, int m) {
 int main() {
     int n = 5, m = 2;
     cout << "The " << m << "-th summation of first " << n << " natural numbers is: " << mthSummation(n, m) << endl;
+    return 0;
+}
+*/
+
+/*int gcd(int a, int b){
+    if(b>a) return gcd(b,a);
+    if(b==0) return a;
+    return gcd(b,a%b);
+}
+int main(){
+    int a=48;
+    int b=40;
+    int x=gcd(a,b);
+    cout<<x<<" ";
+}
+*/
+
+
+// Given an array of n integer value a target value x print weather x exist in the array or not soleve using recurrion
+
+bool f(int *arr, int n, int i, int x){
+    // base case
+    if(i==n){
+        return false;
+    }
+    else if(arr[i]==x || f(arr,n,i+1,x)) return true;
+}
+
+int main(){
+    int arr[] = {1,2,3,4,5};
+    int n = 5;
+    int x = 5;
+    bool res = f(arr,n,0,x);
+    cout<<res;
     return 0;
 }
