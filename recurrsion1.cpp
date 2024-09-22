@@ -68,7 +68,7 @@ int main(){
     return 0;
 }
 
-*/
+
 
 int sumUsingRecurrsion(int *arr , int idx, int n){
     if(idx == n)
@@ -83,5 +83,62 @@ int main(){
     return 0;
 }
 
+*#include <iostream>
+using namespace std; */
+
+//
 
 
+
+
+#include <iostream>
+using namespace std;
+
+// Function to calculate the sum of the first n natural numbers
+int sumFirstN(int n) {
+    return n * (n + 1) / 2;
+}
+
+// Recursive function to calculate the m-th summation
+int mthSummation(int n, int m) {
+    if (m == 1) {
+        return sumFirstN(n);  // Base case: m = 1
+    } else {
+        // Recursive case: SUM(n, m) = SUM(SUM(n, m-1), 1)
+        return sumFirstN(mthSummation(n, m - 1));
+    }
+}
+
+int main() {
+    int n = 5, m = 2;
+    cout << "The " << m << "-th summation of first " << n << " natural numbers is: " << mthSummation(n, m) << endl;
+    return 0;
+}
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+// Function to calculate the sum of the first n natural numbers
+int sumFirstN(int n) {
+    return n * (n + 1) / 2;
+}
+
+// Recursive function to calculate the m-th summation
+int mthSummation(int n, int m) {
+    if (m == 1) {
+        return sumFirstN(n);  // Base case: m = 1
+    } else {
+        // Recursive case: SUM(n, m) = SUM(SUM(n, m-1), 1)
+        return sumFirstN(mthSummation(n, m - 1));
+    }
+}
+
+int main() {
+    int n = 5, m = 2;
+    cout << "The " << m << "-th summation of first " << n << " natural numbers is: " << mthSummation(n, m) << endl;
+    return 0;
+}
